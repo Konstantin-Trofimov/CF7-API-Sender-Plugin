@@ -10,9 +10,9 @@
  * text-domain: query-apis
  */
  
- add_action('wpcf7_mail_sent', 'cf7_api_sender');
+add_action('wpcf7_mail_sent', 'cf7_api_sender');
     
- function cf7_api_sender( $contact_form ) {
+function cf7_api_sender( $contact_form ) {
     $title = $contact_form->title; 
 
     // FORM TITLE 
@@ -120,5 +120,5 @@
             wp_remote_post( $url, $args );
         }
     }
- }
+}
 ?>
