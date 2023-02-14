@@ -40,7 +40,7 @@
             
             // STEP 2 20FT
             
-            $container_20_new   = $posted_data['container20new'];
+            $container_20_new    = $posted_data['container20new'];
             $container_20_used   = $posted_data['container20used'];
             $container_20_custom = $posted_data['container20custom'];
             
