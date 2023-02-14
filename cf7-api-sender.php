@@ -14,8 +14,10 @@
     
  function cf7_api_sender( $contact_form ) {
     $title = $contact_form->title; 
-    
-    if ( $title === 'test-request-form' ) {
+
+    // 
+
+    if ( $title === 'PASTE FORM TITLE HERE' ) {
         $submission = WPCF7_Submission::get_instance();
             
         if ( $submission ) {
@@ -23,30 +25,28 @@
             
             // STEP 1
             
-            // $service_type   = $posted_data['service-type'];
-            
-            $service_type   = $posted_data['user-name'];
+            $service_type = $posted_data['service-type'];
  
             // STEP 2  Relocations
             
-            $pickup_location = $posted_data['pickup-location'];
+            $pickup_location  = $posted_data['pickup-location'];
             $delivery_address = $posted_data['delivery-address'];
-            $text_weight = $posted_data['text-weight'];
+            $text_weight      = $posted_data['text-weight'];
             
             // STEP 2 (or 3 for relocations service type)
             
             $container_type    = $posted_data['container-type'];
-            $text_comment = $posted_data['text-comment'];
+            $text_comment      = $posted_data['text-comment'];
             
             // STEP 2 20FT
             
-            $container_20_used   = $posted_data['container20new'];
+            $container_20_new   = $posted_data['container20new'];
             $container_20_used   = $posted_data['container20used'];
             $container_20_custom = $posted_data['container20custom'];
             
             // STEP 2 40FT
             
-            $container_40_used   = $posted_data['container40new'];
+            $container_40_new    = $posted_data['container40new'];
             $container_40_used   = $posted_data['container40used'];
             $container_40_custom = $posted_data['container40custom'];
             
@@ -74,8 +74,9 @@
             $city    = $posted_data['your-city'];
             $message = $posted_data['your-message'];
            
-            
-            $url = 'https://hook.eu1.make.com/mxnqi4o6wh0lrn63toaoxo1e5ucif1uh';
+            // URL
+
+            $url = 'PASTE URL HERE';
     
             $args = array(
                 'body' => array(
@@ -102,17 +103,17 @@
                     
                     'text-comment' => $text_comment,
                     
-                    'delivery-need'   => $delivery_need,
-                    'delivery-city'   => $delivery_city,
-                    'delivery-street' => $delivery_street,
-                    'delivery-zip'    => $delivery_zip,
+                    'delivery-need'       => $delivery_need,
+                    'delivery-province'   => $delivery_province,
+                    'delivery-city'       => $delivery_city,
+                    'delivery-street'     => $delivery_street,
+                    'delivery-zip'        => $delivery_zip,
                     
                     'name'    => $name,
                     'email'   => $email,
                     'phone'   => $phone,
                     'city'    => $city,
                     'message' => $message,
-                    
                 )
             );
             
