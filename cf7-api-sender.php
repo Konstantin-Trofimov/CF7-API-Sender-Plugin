@@ -15,7 +15,7 @@
  function cf7_api_sender( $contact_form ) {
     $title = $contact_form->title; 
 
-    // 
+    // FORM TITLE 
 
     if ( $title === 'PASTE FORM TITLE HERE' ) {
         $submission = WPCF7_Submission::get_instance();
