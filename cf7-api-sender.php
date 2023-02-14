@@ -2,7 +2,7 @@
 /**
  * Plugin name: CF7 API Sender
  * Plugin URI: https://github.com/Konstantin-Trofimov
- * Description: Get information from external APIs in WordPress
+ * Description: Submit Contact Form 7 Field Data to External API
  * Author: Konstantin Trofimov
  * Author URI: https://github.com/Konstantin-Trofimov
  * version: 0.1.0

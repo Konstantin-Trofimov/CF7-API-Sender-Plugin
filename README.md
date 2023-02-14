@@ -1,5 +1,5 @@
 # CF7 API Sender
-git commit -m "first commit"
+Submit Contact Form 7 Field Data to External API
 
 ## Installation
 
