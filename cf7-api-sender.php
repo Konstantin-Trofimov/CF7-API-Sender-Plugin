@@ -17,7 +17,8 @@ function cf7_api_sender( $contact_form ) {
 
     // FORM TITLE 
 
-    if ( $title === 'PASTE FORM TITLE HERE' ) {
+    // if ( $title === 'PASTE FORM TITLE HERE' ) {
+    if ( $title === 'Get quote Buy step 4' || $title === 'Get quote Modifications 4' || $title === 'Get quote relocations 4' || $title === 'Order Online Buy step 5' || $title === 'Order online modifications step 5' || $title === 'Order online Relocations 6') {
         $submission = WPCF7_Submission::get_instance();
             
         if ( $submission ) {
@@ -73,6 +74,26 @@ function cf7_api_sender( $contact_form ) {
             $phone   = $posted_data['your-phone'];
             $city    = $posted_data['your-city'];
             $message = $posted_data['your-message'];
+            $consent = $posted_data['your-consent'];
+            $how_pay = $posted_data['how-pay'];
+
+            $modification_description = $posted_data['modification-description'];
+
+            $should_load = $posted_data['should_load'];
+            $use_address = $posted_data['use-address'];
+
+            $billing_name = $posted_data['billing-name'];
+            $billing_email = $posted_data['billing-email'];
+            $billing_phone = $posted_data['billing-phone'];
+            $billing_address = $posted_data['billing-address'];
+
+            // Relocations 
+
+            $contact_name     = $posted_data['contact-name'];
+            $contact_phone    = $posted_data['contact-phone'];
+            $contact_address  = $posted_data['contact-address'];
+            $delivery_name    = $posted_data['delivery-name'];
+            $delivery_phone   = $posted_data['delivery-phone'];
            
             // URL
 
@@ -87,7 +108,7 @@ function cf7_api_sender( $contact_form ) {
                     'pickup-location'    => $pickup_location,
                     'approximate-weight' => $text_weight,
                   
-                    'container_type' => $container_type,
+                    'container-type' => $container_type,
                     
                     'container-20-new'    => $container_20_new,
                     'container-20-used'   => $container_20_used,
@@ -108,12 +129,30 @@ function cf7_api_sender( $contact_form ) {
                     'delivery-city'       => $delivery_city,
                     'delivery-street'     => $delivery_street,
                     'delivery-zip'        => $delivery_zip,
+
+                    'contact-name'       => $contact_name,
+                    'contact-phone'      => $contact_phone,
+                    'contact-address'    => $contact_address,
+                    'delivery-name'      => $delivery_name,
+                    'delivery-phone'     => $delivery_phone,
                     
-                    'name'    => $name,
-                    'email'   => $email,
-                    'phone'   => $phone,
-                    'city'    => $city,
-                    'message' => $message,
+                    'customer-name'    => $name,
+                    'customer-email'   => $email,
+                    'customer-phone'   => $phone,
+                    'customer-city'    => $city,
+                    'customer-message' => $message,
+                    'customer-consent' => $consent,
+                    'how-pay' => $how_pay,
+
+                    'modification-description' => $modification_description,
+
+                    'should-load' => $should_load,
+                    'use-address' => $use_address,
+
+                    'billing-name'    => $billing_name,
+                    'billing-email'   => $billing_email,
+                    'billing-phone'   => $billing_phone,
+                    'billing-address' => $billing_address,
                 )
             );
             
