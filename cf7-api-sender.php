@@ -98,65 +98,72 @@ function cf7_api_sender( $contact_form ) {
             // URL
 
             $url = 'PASTE URL HERE';
-    
-            $args = array(
-                'body' => array(
-                    'service-type'   => $service_type,
-                    
-                    'pickup-location'    => $pickup_location,
-                    'delivery-address'   => $delivery_address,
-                    'pickup-location'    => $pickup_location,
-                    'approximate-weight' => $text_weight,
-                  
-                    'container-type' => $container_type,
-                    
-                    'container-20-new'    => $container_20_new,
-                    'container-20-used'   => $container_20_used,
-                    'container-20-custom' => $container_20_custom,
-                    
-                    'container-40-new'    => $container_40_new,
-                    'container-40-used'   => $container_40_used,
-                    'container-40-custom' => $container_40_custom,
-                    
-                    'container-specia-new'    => $container_special_new,
-                    'container-specia-used'   => $container_special_used,
-                    'container-specia-custom' => $container_special_custom,
-                    
-                    'text-comment' => $text_comment,
-                    
-                    'delivery-need'       => $delivery_need,
-                    'delivery-province'   => $delivery_province,
-                    'delivery-city'       => $delivery_city,
-                    'delivery-street'     => $delivery_street,
-                    'delivery-zip'        => $delivery_zip,
 
-                    'contact-name'       => $contact_name,
-                    'contact-phone'      => $contact_phone,
-                    'contact-address'    => $contact_address,
-                    'delivery-name'      => $delivery_name,
-                    'delivery-phone'     => $delivery_phone,
-                    
-                    'customer-name'    => $name,
-                    'customer-email'   => $email,
-                    'customer-phone'   => $phone,
-                    'customer-city'    => $city,
-                    'customer-message' => $message,
-                    'customer-consent' => $consent,
-                    'how-pay' => $how_pay,
+            $body = [
+                'service-type'   => $service_type,
+                
+                'pickup-location'    => $pickup_location,
+                'delivery-address'   => $delivery_address,
+                'pickup-location'    => $pickup_location,
+                'approximate-weight' => $text_weight,
+                
+                'container-type' => $container_type,
+                
+                'container-20-new'    => $container_20_new,
+                'container-20-used'   => $container_20_used,
+                'container-20-custom' => $container_20_custom,
+                
+                'container-40-new'    => $container_40_new,
+                'container-40-used'   => $container_40_used,
+                'container-40-custom' => $container_40_custom,
+                
+                'container-specia-new'    => $container_special_new,
+                'container-specia-used'   => $container_special_used,
+                'container-specia-custom' => $container_special_custom,
+                
+                'text-comment' => $text_comment,
+                
+                'delivery-need'       => $delivery_need,
+                'delivery-province'   => $delivery_province,
+                'delivery-city'       => $delivery_city,
+                'delivery-street'     => $delivery_street,
+                'delivery-zip'        => $delivery_zip,
 
-                    'modification-description' => $modification_description,
+                'contact-name'       => $contact_name,
+                'contact-phone'      => $contact_phone,
+                'contact-address'    => $contact_address,
+                'delivery-name'      => $delivery_name,
+                'delivery-phone'     => $delivery_phone,
+                
+                'customer-name'    => $name,
+                'customer-email'   => $email,
+                'customer-phone'   => $phone,
+                'customer-city'    => $city,
+                'customer-message' => $message,
+                'customer-consent' => $consent,
+                'how-pay' => $how_pay,
 
-                    'should-load' => $should_load,
-                    'use-address' => $use_address,
+                'modification-description' => $modification_description,
 
-                    'billing-name'    => $billing_name,
-                    'billing-email'   => $billing_email,
-                    'billing-phone'   => $billing_phone,
-                    'billing-address' => $billing_address,
-                )
-            );
+                'should-load' => $should_load,
+                'use-address' => $use_address,
+
+                'billing-name'    => $billing_name,
+                'billing-email'   => $billing_email,
+                'billing-phone'   => $billing_phone,
+                'billing-address' => $billing_address,
+            ];
+
+            $body = wp_json_encode( $body );
+
+            $options = [
+                'body'        => $body,
+                'headers'     => [
+                    'Content-Type' => 'application/json',
+                ],
+            ];
             
-            wp_remote_post( $url, $args );
+            wp_remote_post( $url, $options );
         }
     }
 }
