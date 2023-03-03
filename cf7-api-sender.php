@@ -104,7 +104,6 @@ function cf7_api_sender( $contact_form ) {
                 
                 'pickup-location'    => $pickup_location,
                 'delivery-address'   => $delivery_address,
-                'pickup-location'    => $pickup_location,
                 'approximate-weight' => $text_weight,
                 
                 'container-type' => $container_type,
